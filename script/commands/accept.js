@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "accept",
+  name: "قبول",
   version: "1.0.0",
   permission: 2,
   credits: "ryuko",
@@ -9,8 +9,7 @@ module.exports.config = {
   category: "admin",
   usages: "uid",
   cooldowns: 0
-};  
-
+};
 
 module.exports.handleReply = async ({ handleReply, event, api }) => {
   const { author, listRequest } = handleReply;
@@ -82,7 +81,6 @@ module.exports.handleReply = async ({ handleReply, event, api }) => {
   api.sendMessage(`already ${args[0] == 'add' ?'accepted': 'delete'} friend request of ${success.length} person:\n${success.join("\n")}${failed.length > 0?'\nfailed with ${failed.length} person : ${failed.join("\n")}' : ""}`, event.threadID, event.messageID);
 };
 
-
 module.exports.run = async ({ event, api }) => {
   const moment = require("moment-timezone");
   const form = {
@@ -104,7 +102,7 @@ module.exports.run = async ({ event, api }) => {
   }
   api.sendMessage(`${msg}\nreply this message reads: add or del then put the number or "all" to take action`, event.threadID, (e, info) => {
       global.client.handleReply.push({
-        name: this. config. name,
+        name: this.config.name,
         messageID: info.messageID,
         listRequest,
         author: event.senderID
